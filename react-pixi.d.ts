@@ -13,7 +13,7 @@ declare module 'react-pixi' {
   export { render, unmountComponentAtNode } from 'react-dom';
 
   export interface ContainerPropsType extends DisplayObjectPropsType {
-    children?: PIXI.DisplayObject[];
+    children?: any|PIXI.DisplayObject[];
     width?: number;
     height?: number;
   }
@@ -48,7 +48,7 @@ declare module 'react-pixi' {
     rotation?: number;
     worldVisible?: boolean;
     mask?: PIXI.Graphics | PIXI.Sprite;
-    filters?: PIXI.Filter[] | null;
+    filters?: PIXI.Filter<any>[] | null;
   }
   export interface GraphicsPropsType extends ContainerPropsType {
     fillAlpha?: number;
@@ -106,7 +106,7 @@ declare module 'react-pixi' {
   }
   export interface TilingSpritePropsType extends SpritePropsType {
     tileTransform?: PIXI.TransformStatic;
-    uvTransform?: PIXI.extras.TextureTransform;
+    uvTransform?: any;
     uvRespectAnchor?: boolean;
     clampMargin?: number;
     tileScale?: PIXI.Point | number[] | number | string | PIXI.ObservablePoint | number[] | number | string;
